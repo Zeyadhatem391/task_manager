@@ -96,7 +96,7 @@ export default function MainContent({
               >
                 {/* Project */}
                 {projectName && (
-                  <div className="flex items-center w-20 gap-2 text-xs text-blue-600 mb-2 cursor-pointer">
+                  <div className="flex items-center w-fit gap-2 text-xs text-blue-600 mb-2 cursor-pointer">
                     <Folder size={20} />
                     <span className="text-xl">{projectName}</span>
                   </div>

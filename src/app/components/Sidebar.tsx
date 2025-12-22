@@ -98,14 +98,14 @@ export default function Sidebar({
       {openMenuMobile && (
         <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center animate-fadeIn">
           <div
-            className={` ${COLORS.sidebar} w-64 rounded-xl shadow-2xl relative animate-scaleIn`}
+            className={` ${COLORS.sidebar} w-76 rounded-xl shadow-2xl relative animate-scaleIn`}
           >
             <X
               className="absolute top-3 right-3 text-white w-6 h-6 cursor-pointer"
               onClick={() => setOpenMenuMobile(false)}
             />
 
-            <ul className="flex flex-col gap-4 p-4">
+            <ul className="flex flex-col gap-7 p-5">
               {[
                 { icon: Home, label: "Home", link: "/" },
                 {
@@ -123,10 +123,10 @@ export default function Sidebar({
                 <li key={i}>
                   <Link
                     href={item.link}
-                    className={`${COLORS.text} flex items-center gap-3 p-3 rounded-lg cursor-pointer transition ${COLORS.hover}`}
+                    className={`${COLORS.text} flex items-center gap-4 p-4 rounded-lg cursor-pointer transition ${COLORS.hover}`}
                   >
-                    <item.icon className="w-6 h-6" />
-                    <span className="text-sm font-medium">{item.label}</span>
+                    <item.icon className="w-7 h-7" />
+                    <span className="text-2xl font-bold">{item.label}</span>
                   </Link>
                 </li>
               ))}
@@ -138,42 +138,45 @@ export default function Sidebar({
       {openNewDropdown && (
         <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center animate-fadeIn">
           <div
-            className={` ${COLORS.sidebar}  rounded-xl shadow-xl  relative animate-scaleIn`}
+            className={` ${COLORS.sidebar} w-68 rounded-xl shadow-xl pb-5 relative animate-scaleIn`}
           >
-            <X
-              className="absolute top-3 right-3 text-white cursor-pointer"
-              onClick={() => setOpenNewDropdown(false)}
-            />
-            <ul className="p-3">
+            <ul className="p-3 gap-5">
+              <li className="w-full h-1/2 p-2 ">
+                <X
+                  className=" text-white cursor-pointer"
+                  onClick={() => setOpenNewDropdown(false)}
+                />
+              </li>
               <li className={`w-full h-1/2 ${COLORS.hover}  rounded-xl`}>
                 <button
-                  className={`flex items-center gap-2 p-4 ${COLORS.text}  `}
+                  className={`flex items-center gap-7 p-5 ${COLORS.text}  `}
                   onClick={() => {
                     onOpenAddTask();
                     setOpenNewDropdown(false);
                   }}
                 >
-                  <Plus className="w-5 h-5" />
-                  Add Task
+                  <Plus className="w-7 h-7" />
+                  <span className="text-2xl font-bold">Add Task</span>
                 </button>
               </li>
               <li className={`w-full h-1/2 ${COLORS.hover} rounded-xl`}>
                 {" "}
                 <button
-                  className={`flex items-center gap-2 p-4 ${COLORS.text}  `}
+                  className={`flex items-center gap-7 p-5 ${COLORS.text}  `}
                   onClick={() => {
                     onOpenAddProject();
                     setOpenNewDropdown(false);
                   }}
                 >
-                  <FolderClosed className="w-5 h-5" />
-                  Add Project
+                  <FolderClosed className="w-7 h-7" />
+                  <span className="text-2xl font-bold">Add Project</span>
                 </button>
               </li>
             </ul>
           </div>
         </div>
       )}
+
       <div className="md:hidden fixed bottom-5 right-5 z-50">
         <div
           onClick={() => {

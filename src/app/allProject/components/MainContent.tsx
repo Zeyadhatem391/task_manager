@@ -131,7 +131,7 @@ export default function MainContent({
                         openMenuId === project.id ? null : project.id
                       )
                     }
-                    className="p-1 rounded-full hover:bg-gray-100"
+                    className="p-1 rounded-full hover:bg-gray-100 cursor-pointer"
                   >
                     <MoreVertical size={18} />
                   </button>

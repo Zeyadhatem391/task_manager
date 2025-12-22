@@ -82,7 +82,7 @@ export default function AddTaskModal({
   return (
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
       <div
-        className={`w-105 rounded-xl shadow-xl p-6 relative ${COLORS.bg} ${COLORS.text}`}
+        className={` w-90 md:w-105 rounded-xl shadow-xl p-4 md:p-6 relative ${COLORS.bg} ${COLORS.text}`}
       >
         <X
           className="absolute top-4 right-4 cursor-pointer opacity-70 hover:opacity-100"
@@ -91,7 +91,7 @@ export default function AddTaskModal({
 
         <h2 className="text-2xl font-bold mb-6">New Task</h2>
 
-        <div className="space-y-4">
+        <div className="md:space-y-4 space-y-2">
           {/* Title */}
           <div className="flex flex-col gap-1">
             <label className="text-sm">Title</label>
@@ -217,7 +217,7 @@ export default function AddTaskModal({
           </div>
 
           {/* Dates */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 pt-2">
             <input
               type="date"
               value={startDate}

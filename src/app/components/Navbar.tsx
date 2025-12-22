@@ -126,11 +126,16 @@ export default function Navbar({
             setOpenExport(true);
           }}
         >
-          <DropdownItem icon={<Printer size={16} />} label="Print todo-list" />
-          <DropdownItem icon={<FileText size={16} />} label="Save as PDF" />
+          <div className="w-40">
+            <DropdownItem
+              icon={<Printer size={16} />}
+              label="Print todo-list"
+            />
+            <DropdownItem icon={<FileText size={16} />} label="Save as PDF" />
+          </div>
         </DropdownButton>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           {/* Display */}
           <DropdownButton
             label={viewMode === "list" ? "List" : "Tiles"}
@@ -179,30 +184,32 @@ export default function Navbar({
             setOpenFilter(true);
           }}
         >
-          <FilterItem
-            active={filters.notStarted}
-            icon={<Circle size={15} />}
-            label="Not started"
-            onClick={() => toggleFilter("notStarted")}
-          />
-          <FilterItem
-            active={filters.inProgress}
-            icon={<Loader size={16} />}
-            label="In progress"
-            onClick={() => toggleFilter("inProgress")}
-          />
-          <FilterItem
-            active={filters.incomplete}
-            icon={<XCircle size={16} />}
-            label="Incomplete"
-            onClick={() => toggleFilter("incomplete")}
-          />
-          <FilterItem
-            active={filters.completed}
-            icon={<CheckCircle2 size={16} />}
-            label="Completed"
-            onClick={() => toggleFilter("completed")}
-          />
+          <div className="md:w-auto w-44">
+            <FilterItem
+              active={filters.notStarted}
+              icon={<Circle size={15} />}
+              label="Not started"
+              onClick={() => toggleFilter("notStarted")}
+            />
+            <FilterItem
+              active={filters.inProgress}
+              icon={<Loader size={16} />}
+              label="In progress"
+              onClick={() => toggleFilter("inProgress")}
+            />
+            <FilterItem
+              active={filters.incomplete}
+              icon={<XCircle size={16} />}
+              label="Incomplete"
+              onClick={() => toggleFilter("incomplete")}
+            />
+            <FilterItem
+              active={filters.completed}
+              icon={<CheckCircle2 size={16} />}
+              label="Completed"
+              onClick={() => toggleFilter("completed")}
+            />
+          </div>
         </DropdownButton>
 
         {/* Profile */}

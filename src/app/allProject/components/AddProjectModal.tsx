@@ -58,7 +58,7 @@ export default function AddProjectModal({
   return (
     <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center">
       <div
-        className={`w-105 rounded-xl shadow-xl p-6 relative ${COLORS.bg} ${COLORS.text}`}
+        className={` w-90 md:w-105 rounded-xl shadow-xl p-6 relative ${COLORS.bg} ${COLORS.text}`}
       >
         <X
           className="absolute top-4 right-4 cursor-pointer opacity-70 hover:opacity-100"
@@ -67,7 +67,7 @@ export default function AddProjectModal({
 
         <h2 className="text-2xl font-bold mb-6">New Project</h2>
 
-        <div className="space-y-4">
+        <div className="md:space-y-4 space-y-2">
           <div className="flex flex-col gap-1">
             <label className="text-sm">Project Name</label>
             <input
@@ -101,7 +101,7 @@ export default function AddProjectModal({
             </select>
           </div>
 
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <div className="flex flex-col gap-1 flex-1">
               <label className="text-sm">Start Date</label>
               <input
